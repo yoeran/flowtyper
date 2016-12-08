@@ -1,6 +1,6 @@
 # FlowTyper
 
-Simple textwriter that deletes your work if you pause to long. Inspired by the FlowState app. Rebuilt in Electron for fun.
+Simple textwriter that deletes your work if you pause too long. Inspired by the [Flowstate app](http://hailoverman.com/flowstate). Rebuilt in Electron for fun.
 
 ![FlowTyper screengrab](http://static.yoeran.nl/flowtyper/flowtyper-example.gif)
 
