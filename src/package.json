@@ -10,7 +10,11 @@
   },
   "scripts": {
     "start": "electron .",
-    "build": "rm -rf ../build && electron-packager . --all --out=../build"
+    "clean:builds": "rm -rf ../build",
+    "build:all": "electron-packager . --all --out=../build",
+    "build:osx": "electron-packager . --platform=darwin --out=../build",
+    "build:win": "electron-packager . --platform=win32 --out=../build",
+    "build:linux": "electron-packager . --platform=linux --out=../build"
   },
   "repository": {
     "type": "git",
