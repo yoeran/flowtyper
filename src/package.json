@@ -30,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/yoeran/flowtyper/issues"
   },
-  "homepage": "https://github.com/yoeran/flowtyper#readme"
+  "homepage": "https://github.com/yoeran/flowtyper#readme",
+  "dependencies": {
+    "simplemde": "^1.11.2"
+  }
 }

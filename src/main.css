@@ -10,7 +10,7 @@ body {
   color: #fff;
 }
 
-textarea {
+/*textarea {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@ textarea {
 
 textarea:focus {
   outline: none;
-}
+}*/
 
 #intro {
   display: none;
@@ -95,6 +95,8 @@ textarea:focus {
 
 #writer {
   display: none;
+  position: relative;
+  height: 100vh;
 }
 
 body[data-view="form"] #intro {

@@ -16,3 +16,4 @@ I've uploaded two builds of the app for you to try out, have fun!
 * Set a **duration** for your session on how long you want to experience extreme focus (default 5 minutes)
 * Set a **delay** on how long it should take before your procrastination is punished (default 5 seconds)
 * **Save** your raw, pure and magnificent work in plain text after the session has ended
+* With **Markdown** support thanks to [SimpleMDE](https://github.com/NextStepWebs/simplemde-markdown-editor)

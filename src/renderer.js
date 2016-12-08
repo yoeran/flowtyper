@@ -1,5 +1,12 @@
-const {dialog} = require('electron').remote
-const fs       = require('fs');
+const {dialog}  = require('electron').remote
+const fs        = require('fs');
+const SimpleMDE = require('simplemde');
+
+const editor = new SimpleMDE({
+  autoDownloadFontAwesome: false,
+  toolbar: false,
+  spellChecker: false
+});
 
 const sessionFormElem = document.getElementById('sessionForm');
 const writerElem      = document.getElementById('writer');
@@ -23,7 +30,9 @@ sessionFormElem.addEventListener('submit', function(ev){
   sessionDelay    *= 1000;
 
   startSession();
-})
+});
+
+editor.codemirror.on("change", setLastActivity);
 
 function setView(viewName) {
   document.body.setAttribute('data-view', viewName);
@@ -35,23 +44,24 @@ function setLastActivity () {
 }
 
 function cleanArea () {
-  writerArea.blur();
+  document.body.focus();
+
   let cleanInterval = setInterval(function() {
-    writerArea.value = writerArea.value.slice(0,-1);
-    if ( writerArea.value.length <= 0 ) {
+    let val = editor.value();
+    editor.value( val.slice(0, -1) );
+    if ( val.length <= 1 ) {
       window.clearInterval(cleanInterval);
-      writerArea.focus();
+      editor.codemirror.focus();
     }
   }, 1);
 }
 
 function startSession () {
   setView('writer');
-  writerArea.value = '';
-  writerArea.focus();
+  editor.value("");
+  editor.codemirror.focus();
 
   setLastActivity();
-  mainArea.addEventListener('keyup', setLastActivity);
 
   checkInterval = setInterval(function(){
     const diff = now() - lastActivity;
@@ -65,8 +75,7 @@ function startSession () {
 
 function stopSession () {
   window.clearInterval(checkInterval);
-  mainArea.removeEventListener('keyup', setLastActivity);
-  writerArea.blur();
+  document.body.focus();
 
   setTimeout(function(){
     alert("The session is over!");
