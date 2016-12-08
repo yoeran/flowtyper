@@ -1,0 +1,30 @@
+{
+  "name": "flowtyper",
+  "version": "1.0.0",
+  "productName": "FlowTyper",
+  "description": "Simple textwriter that deletes your work if you pause too long.",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "electron-packager": "^8.3.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --all --out=../build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoeran/flowtyper.git"
+  },
+  "keywords": [
+    "writing",
+    "flow",
+    "electron"
+  ],
+  "author": "Yoeran Luteijn",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/yoeran/flowtyper/issues"
+  },
+  "homepage": "https://github.com/yoeran/flowtyper#readme"
+}
