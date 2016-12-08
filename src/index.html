@@ -6,9 +6,37 @@
   </head>
   <link rel="stylesheet" type="text/css" href="main.css">
   <body>
+    <div id="intro">
+      <form id="sessionForm">
+        <input type="text" id="session_title" name="session_title" placeholder="Session title..." />
+
+        <div class="input-columns">
+          <label class="input-column">
+            Stop session after
+            <input type="number" id="session_duration" name="session_duration" value="5" /> minutes
+          </label>
+
+          <label class="input-column">
+            Remove text after
+            <input type="number" id="session_delay" name="session_delay" value="5" /> seconds inactivity
+          </label>
+        </div>
+
+        <input type="submit" id="submit" value="Start" />
+      </form>
+    </div>
+
+    <main id="writer">
+      <textarea id="mainArea"></textarea>
+
+      <footer class="status-bar">
+
+      </footer>
+    </main>
   </body>
 
   <script>
+    // You can also require other files to run in this process
     require('./renderer.js')
   </script>
 </html>
